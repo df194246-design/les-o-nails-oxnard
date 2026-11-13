@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Le's O Nails | Nail Salon in Oxnard, CA</title>
+  <meta name="description" content="Le's O Nails at 2319 N Oxnard Blvd, Oxnard. Manicures, pedicures, acrylics, gel, nail art, and waxing. Call (805) 485-6877 or request an appointment." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal: #1f4f4a;
+      --teal-2: #2b6a64;
+      --sand: #f7f3ec;
+      --sand-2: #efe8db;
+      --apricot: #e7a56b;
+      --ink: #1a2423;
+      --mute: #5b6a68;
+      --white: #fffcf7;
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    #top, #services, #reviews, #book, #visit { scroll-margin-top: 90px; }
+    body { font-family: "Figtree", system-ui, sans-serif; background: var(--sand); color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    button, .btn, input, select, textarea { font-family: inherit; }
+    :focus-visible { outline: 3px solid var(--apricot); outline-offset: 3px; }
+    .skip { position: absolute; left: 1rem; top: -40px; background: var(--teal); color: #fff; padding: .5rem .8rem; z-index: 80; }
+    .skip:focus { top: 1rem; }
+    .wrap { width: min(var(--max), calc(100% - 2rem)); margin-inline: auto; }
+    .preview-banner { background: var(--teal); color: #fff; text-align: center; font-size: .75rem; letter-spacing: .07em; text-transform: uppercase; font-weight: 600; padding: .55rem 1rem; }
+    .preview-banner strong { color: var(--apricot); }
+    .site-header { position: sticky; top: 0; z-index: 40; background: rgba(247,243,236,.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(31,79,74,.12); }
+    .nav { display: flex; align-items: center; justify-content: space-between; min-height: 74px; gap: 1rem; }
+    .brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; }
+    .mark { width: 38px; height: 38px; border: 2px solid var(--teal); border-radius: 50%; display: grid; place-items: center; font-family: "Syne", sans-serif; font-weight: 800; color: var(--teal); }
+    .brand b { font-family: "Syne", sans-serif; font-size: 1.15rem; display: block; line-height: 1; }
+    .brand small { display: block; font-size: .7rem; color: var(--mute); }
+    .nav-panel { display: flex; align-items: center; gap: 1.3rem; }
+    .nav-links { display: flex; gap: 1.2rem; list-style: none; }
+    .nav-links a { text-decoration: none; font-weight: 500; color: var(--mute); }
+    .nav-links a:hover { color: var(--ink); }
+    .menu-toggle { display: none; width: 44px; height: 44px; border: 2px solid var(--teal); background: transparent; border-radius: 50%; cursor: pointer; position: relative; }
+    .menu-toggle span, .menu-toggle::before, .menu-toggle::after { content: ""; position: absolute; left: 11px; right: 11px; height: 2px; background: var(--teal); }
+    .menu-toggle::before { top: 14px; } .menu-toggle span { top: 21px; } .menu-toggle::after { bottom: 14px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; border: 2px solid transparent; padding: .72rem 1.15rem; font-weight: 700; border-radius: 999px; cursor: pointer; transition: .15s transform, .15s background, .15s color; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-teal { background: var(--teal); color: #fff; border-color: var(--teal); }
+    .btn-teal:hover { background: var(--teal-2); }
+    .btn-apricot { background: var(--apricot); color: var(--ink); border-color: var(--apricot); }
+    .btn-line { background: transparent; color: var(--teal); border-color: var(--teal); }
+    .btn-line:hover { background: var(--teal); color: #fff; }
+    .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.4); }
+    .btn-ghost:hover { background: #fff; color: var(--teal); }
+    .btn-lg { padding: .9rem 1.35rem; }
+    .hero { padding: 3.6rem 0 4rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 2rem; align-items: center; }
+    .eyebrow { font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--teal-2); margin-bottom: .8rem; }
+    h1, h2 { font-family: "Syne", sans-serif; line-height: 1.05; letter-spacing: -.03em; }
+    h1 { font-size: clamp(2.6rem, 6vw, 4.4rem); margin-bottom: 1rem; }
+    h1 span { color: var(--teal); }
+    .lead { max-width: 34rem; color: var(--mute); font-size: 1.08rem; margin-bottom: 1.5rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+    .ticket { background: var(--white); border-radius: 24px; padding: 1.3rem; box-shadow: 0 18px 40px rgba(31,79,74,.08); border: 1px solid rgba(31,79,74,.08); }
+    .ticket dt { font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); margin-bottom: .2rem; }
+    .ticket dd { font-weight: 600; margin-bottom: .85rem; }
+    .status { display: inline-flex; align-items: center; gap: .4rem; }
+    .status i { width: 8px; height: 8px; border-radius: 50%; background: #aaa; display: inline-block; }
+    .status.open i { background: #2f9e44; } .status.closed i { background: #c45c3e; }
+    section { padding: 4.2rem 0; }
+    .section-head { max-width: 36rem; margin-bottom: 2rem; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); }
+    .section-head p { color: var(--mute); margin-top: .65rem; }
+    .services { background: var(--teal); color: #fff; }
+    .services .section-head p { color: #d7e4e2; }
+    .svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .card { background: rgba(255,252,247,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; padding: 1.2rem; }
+    .card h3 { font-family: "Syne", sans-serif; font-size: 1.25rem; margin-bottom: .35rem; }
+    .card p { color: #d7e4e2; font-size: .98rem; }
+    .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .review { background: var(--white); border-radius: 18px; padding: 1.2rem; border: 1px solid rgba(31,79,74,.08); }
+    .stars { color: var(--apricot); }
+    .review blockquote { margin: .55rem 0 .8rem; }
+    .review cite { font-style: normal; font-size: .88rem; color: var(--mute); }
+    .disclaimer { margin-top: 1.1rem; font-size: .84rem; color: var(--mute); }
+    .book { background: var(--sand-2); }
+    .book-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 1.6rem; align-items: start; }
+    form { background: var(--white); border-radius: 22px; padding: 1.3rem; display: grid; gap: .85rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
+    label { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; margin-bottom: .3rem; }
+    input, select, textarea { width: 100%; border: 1.5px solid rgba(31,79,74,.25); background: var(--sand); padding: .7rem .75rem; font-size: 1rem; border-radius: 12px; }
+    textarea { min-height: 100px; resize: vertical; }
+    .form-msg { display: none; padding: .8rem; border-radius: 12px; background: #e7f4ee; }
+    .form-msg.show { display: block; } .form-msg.error { background: #f8e8e4; }
+    .hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+    .side { background: var(--teal); color: #fff; border-radius: 22px; padding: 1.4rem; }
+    .side h3 { font-family: "Syne", sans-serif; font-size: 1.5rem; margin-bottom: .5rem; }
+    .side p { color: #d7e4e2; margin-bottom: 1rem; }
+    .hours { list-style: none; display: grid; gap: .35rem; margin-bottom: 1.2rem; }
+    .hours li { display: flex; justify-content: space-between; gap: 1rem; border-bottom: 1px dashed rgba(255,255,255,.18); padding-bottom: .3rem; font-size: .92rem; }
+    footer { padding: 2rem 0 5.6rem; }
+    .foot { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .foot-links { display: flex; flex-wrap: wrap; gap: .8rem 1.2rem; }
+    .foot-links a { text-decoration: none; font-weight: 600; }
+    .foot-note, .credit { margin-top: .9rem; font-size: .82rem; color: var(--mute); max-width: 70ch; }
+    .credit a { color: var(--teal); font-weight: 700; }
+    .mobile-bar { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; background: var(--teal); padding: .65rem .8rem calc(.65rem + env(safe-area-inset-bottom)); gap: .5rem; }
+    .mobile-bar .btn { flex: 1; }
+    @media (max-width: 900px) {
+      .hero-grid, .svc-grid, .rev-grid, .book-grid, .form-row { grid-template-columns: 1fr; }
+      .menu-toggle { display: block; }
+      .nav-panel { display: none; position: absolute; left: 0; right: 0; top: 100%; background: var(--sand); border-bottom: 1px solid rgba(31,79,74,.12); padding: 1rem; flex-direction: column; align-items: stretch; }
+      .nav.open .nav-panel { display: flex; }
+      .nav-links { flex-direction: column; }
+      .mobile-bar { display: flex; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#book">Skip to appointment form</a>
+  <div class="preview-banner">Preview website for <strong>Le's O Nails</strong> · not the official site. Details are from public listings and may need a quick check.</div>
+  <header class="site-header">
+    <div class="wrap nav" id="nav">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true">L</span><span><b>Le's O Nails</b><small>Oxnard Blvd</small></span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+      <div class="nav-panel">
+        <ul class="nav-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#visit">Hours</a></li>
+        </ul>
+        <a class="btn btn-teal" href="#book">Book a time</a>
+      </div>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">2319 N Oxnard Blvd</p>
+          <h1>Nails done right on <span>Oxnard Blvd.</span></h1>
+          <p class="lead">Le's O Nails is a local salon for manicures, pedicures, acrylics, gel, nail art, and waxing. Call or request an appointment below.</p>
+          <div class="hero-actions">
+            <a class="btn btn-apricot btn-lg" href="#book">Request an appointment</a>
+            <a class="btn btn-line btn-lg" href="tel:+18054856877">Call (805) 485-6877</a>
+          </div>
+        </div>
+        <dl class="ticket">
+          <dt>Status</dt><dd><span class="status" id="openStatus"><i></i> <span id="openText">Checking hours</span></span></dd>
+          <dt>Hours</dt><dd>Monday to Saturday, 10:00 AM to 7:00 PM<br>Sunday closed</dd>
+          <dt>Address</dt><dd>2319 N Oxnard Blvd<br>Oxnard, CA 93036</dd>
+          <dt>Social</dt><dd><a href="https://www.instagram.com/lesonails/" target="_blank" rel="noopener">@lesonails</a></dd>
+        </dl>
+      </div>
+    </section>
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow" style="color:var(--apricot)">The menu</p>
+          <h2>Services</h2>
+          <p>These services come from the salon's Nextdoor page. If you need something else, describe it in the form.</p>
+        </div>
+        <div class="svc-grid">
+          <article class="card"><h3>Manicures</h3><p>Classic and gel manicures for a clean, finished look.</p></article>
+          <article class="card"><h3>Pedicures</h3><p>Pedicure visits, including fills mentioned in public reviews.</p></article>
+          <article class="card"><h3>Acrylic nails</h3><p>Full sets and acrylic work, including overlays noted by clients.</p></article>
+          <article class="card"><h3>Gel services</h3><p>Gel polish and related gel work listed by the salon.</p></article>
+          <article class="card"><h3>Nail art</h3><p>Design work, from simple details to custom looks.</p></article>
+          <article class="card"><h3>Waxing</h3><p>Waxing and related beauty treatments, as listed on Nextdoor.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="reviews">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Public feedback</p>
+          <h2>What people have written</h2>
+          <p>Short excerpts from public listings. This page does not invent testimonials.</p>
+        </div>
+        <div class="rev-grid">
+          <article class="review"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>“I absolutely love getting my nails done there I go with Anh and she’s amazing... I can give her a design and she mimics it spot on!!”</blockquote><cite>Public review excerpt</cite></article>
+          <article class="review"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>“I have been going to this nail salon for 3 years and I have never had a bad experience. Brian is very courteous and he takes time to fulfill my nail desires.”</blockquote><cite>Public review excerpt</cite></article>
+          <article class="review"><div class="stars" aria-label="5 stars">★★★★★</div><blockquote>“Lily is amazing! My daughter’s first time getting her nails done and she was EXTREMELY happy. Clean and friendly nail salon too!”</blockquote><cite>Public review excerpt</cite></article>
+        </div>
+        <p class="disclaimer">Google-style listings show a 3.9 rating from a larger set of reviews, so this preview does not treat the salon as a perfect score. <a href="https://www.google.com/maps/search/?api=1&amp;query=Le%27s+O+Nails+2319+N+Oxnard+Blvd+Oxnard+CA+93036" target="_blank" rel="noopener">Read the full mix on Google Maps</a>.</p>
+      </div>
+    </section>
+    <section class="book" id="book">
+      <div class="wrap book-grid">
+        <div>
+          <div class="section-head">
+            <p class="eyebrow">Plan a visit</p>
+            <h2>Request an appointment</h2>
+            <p>Tell the salon what you would like. Prefer to call? Reach them at <a href="tel:+18054856877">(805) 485-6877</a>.</p>
+          </div>
+          <form id="quoteForm" novalidate>
+            <div class="form-row">
+              <div><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" required /></div>
+              <div><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required /></div>
+            </div>
+            <div class="form-row">
+              <div><label for="email">Email (optional)</label><input id="email" name="email" type="email" autocomplete="email" /></div>
+              <div>
+                <label for="service">Service</label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option>Manicure</option>
+                  <option>Pedicure</option>
+                  <option>Acrylic nails</option>
+                  <option>Gel services</option>
+                  <option>Nail art</option>
+                  <option>Waxing</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div><label for="date">Preferred date (optional)</label><input id="date" name="preferredDate" type="date" /></div>
+              <div><label for="tech">Preferred technician (optional)</label><input id="tech" name="tech" type="text" placeholder="Or leave blank" /></div>
+            </div>
+            <div><label for="description">Notes</label><textarea id="description" name="description" placeholder="Shape, color, design, or anything the salon should know"></textarea></div>
+            <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="_gotcha" type="text" tabindex="-1" autocomplete="off" /></div>
+            <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+            <button class="btn btn-teal btn-lg" type="submit" id="submitBtn">Send request</button>
+          </form>
+        </div>
+        <aside class="side" id="visit">
+          <h3>Hours and location</h3>
+          <p>2319 N Oxnard Blvd<br>Oxnard, CA 93036</p>
+          <ul class="hours">
+            <li><span>Monday to Saturday</span><span>10:00 AM to 7:00 PM</span></li>
+            <li><span>Sunday</span><span>Closed</span></li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn btn-apricot" href="tel:+18054856877">Call (805) 485-6877</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Le%27s+O+Nails+2319+N+Oxnard+Blvd+Oxnard+CA+93036" target="_blank" rel="noopener">Google Maps</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <a class="brand" href="#top"><span class="mark" aria-hidden="true">L</span><span><b>Le's O Nails</b><small>Oxnard Blvd</small></span></a>
+        <div class="foot-links">
+          <a href="tel:+18054856877">(805) 485-6877</a>
+          <a href="#book">Request an appointment</a>
+          <a href="https://www.instagram.com/lesonails/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Le%27s+O+Nails+2319+N+Oxnard+Blvd+Oxnard+CA+93036" target="_blank" rel="noopener">Google Maps</a>
+        </div>
+      </div>
+      <p class="foot-note">This is a free preview website prepared for Le's O Nails in Oxnard, CA, and is not the official site. Hours, services, and review excerpts were gathered from public listings (including the business Nextdoor page and Google-style place pages) and may need confirmation. © Le's O Nails, Oxnard, CA.</p>
+      <p class="credit">Preview by <a href="https://playmkr-studios.pages.dev/">PLAYMKR Studios</a></p>
+    </div>
+  </footer>
+  <div class="mobile-bar" aria-label="Quick actions">
+    <a class="btn btn-ghost" href="tel:+18054856877">Call now</a>
+    <a class="btn btn-apricot" href="#book">Book</a>
+  </div>
+  <script>
+    const BUSINESS_CONFIG = {
+      businessName: "Le's O Nails",
+      notificationEmail: "df194246@gmail.com",
+      phone: "(805) 485-6877",
+      address: "2319 N Oxnard Blvd, Oxnard, CA 93036",
+      timezone: "America/Los_Angeles",
+      mapsQuery: "Le's O Nails 2319 N Oxnard Blvd Oxnard CA 93036"
+    };
+    (function () {
+      function headerOffset() {
+        var header = document.querySelector(".site-header");
+        return (header ? header.getBoundingClientRect().height : 74) + 16;
+      }
+      function scrollToId(id) {
+        var el = document.getElementById(id);
+        if (!el) return false;
+        window.scrollTo({ top: Math.max(0, el.getBoundingClientRect().top + window.pageYOffset - headerOffset()), behavior: "smooth" });
+        return true;
+      }
+      document.addEventListener("click", function (e) {
+        var a = e.target.closest("a[href^='#']");
+        if (!a) return;
+        var href = a.getAttribute("href");
+        if (!href || href === "#") return;
+        var id = decodeURIComponent(href.slice(1));
+        if (!document.getElementById(id)) return;
+        e.preventDefault();
+        scrollToId(id);
+        try { history.replaceState(null, "", href); } catch (err) {}
+      });
+    })();
+    (function () {
+      var nav = document.getElementById("nav");
+      var toggle = document.getElementById("menuToggle");
+      if (!toggle) return;
+      toggle.addEventListener("click", function () {
+        var open = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      });
+      nav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          nav.classList.remove("open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    })();
+    (function () {
+      var text = document.getElementById("openText");
+      var status = document.getElementById("openStatus");
+      if (!text) return;
+      var parts = new Intl.DateTimeFormat("en-US", { timeZone: BUSINESS_CONFIG.timezone, weekday: "short", hour: "numeric", minute: "numeric", hourCycle: "h23" }).formatToParts(new Date());
+      var map = {}; parts.forEach(function (p) { map[p.type] = p.value; });
+      var day = map.weekday;
+      var minutes = parseInt(map.hour, 10) * 60 + parseInt(map.minute, 10);
+      var closedSunday = day === "Sun";
+      var open = !closedSunday && minutes >= 10 * 60 && minutes < 19 * 60;
+      status.classList.add(open ? "open" : "closed");
+      text.textContent = open ? "Open now" : (closedSunday ? "Closed Sunday" : "Closed now");
+    })();
+    (function () {
+      var date = document.getElementById("date");
+      if (date) date.setAttribute("min", new Intl.DateTimeFormat("en-CA", { timeZone: BUSINESS_CONFIG.timezone }).format(new Date()));
+      var form = document.getElementById("quoteForm");
+      var msg = document.getElementById("formMsg");
+      var btn = document.getElementById("submitBtn");
+      if (!form) return;
+      function showMsg(text, isError) { msg.textContent = text; msg.classList.add("show"); msg.classList.toggle("error", !!isError); }
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (form._gotcha && form._gotcha.value) return;
+        var name = (form.name.value || "").trim();
+        var phone = (form.phone.value || "").trim();
+        var email = (form.email.value || "").trim();
+        var service = (form.service.value || "").trim();
+        var preferredDate = (form.preferredDate.value || "").trim();
+        var tech = (form.tech.value || "").trim();
+        var description = (form.description.value || "").trim();
+        if (!name || !phone || !service) { showMsg("Please fill in your name, phone, and a service.", true); return; }
+        btn.disabled = true;
+        var payload = {
+          _subject: "Appointment request - " + BUSINESS_CONFIG.businessName,
+          _template: "table", _captcha: "false",
+          type: "Appointment request", business: BUSINESS_CONFIG.businessName,
+          name: name, phone: phone, email: email || "(not provided)", service: service,
+          preferredDate: preferredDate || "(not provided)", technician: tech || "(no preference)",
+          notes: description || "(none)"
+        };
+        if (email) payload._replyto = email;
+        try {
+          fetch("https://formsubmit.co/ajax/" + BUSINESS_CONFIG.notificationEmail, {
+            method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" },
+            body: JSON.stringify(payload)
+          }).catch(function () {});
+        } catch (err) {}
+        showMsg("Thanks, " + name + ". Your request was sent. If you need to talk sooner, call " + BUSINESS_CONFIG.phone + ".", false);
+        form.reset(); btn.disabled = false;
+      });
+    })();
+  </script>
+</body>
+</html>
